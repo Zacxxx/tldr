@@ -174,7 +174,7 @@ export default function Home() {
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.5}}
           >
-            <h1>AI-Powered Summarizer</h1>
+            <h1 className="text-xl md:text-2xl lg:text-3xl">AI-Powered Summarizer</h1>
             <nav className="header-nav">
               <ul>
                 <li><a href="#">Home</a></li>
@@ -286,3 +286,4 @@ export default function Home() {
     </SidebarProvider>
   );
 }
+
