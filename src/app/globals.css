@@ -295,7 +295,9 @@ footer {
 .header {
     background-color: hsl(var(--card));
     color: hsl(var(--card-foreground));
-    padding: 1rem 2rem;
+    /*Increased header height and padding*/
+    padding: 1.5rem 2rem;
+    min-height: 150px;
     border-bottom: 1px solid hsl(var(--border));
     display: flex;
     justify-content: space-between;
@@ -441,7 +443,9 @@ footer {
 .header {
     background-color: hsl(var(--card));
     color: hsl(var(--card-foreground));
-    padding: 1rem 2rem;
+    /*Increased header height and padding*/
+    padding: 1.5rem 2rem;
+    min-height: 150px;
     border-bottom: 1px solid hsl(var(--border));
     display: flex;
     justify-content: space-between;
@@ -568,3 +572,4 @@ footer {
     border-radius: 50%;
     animation: rotate 1s linear infinite;
 }
+
