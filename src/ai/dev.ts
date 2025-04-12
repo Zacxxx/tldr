@@ -1,1 +1,3 @@
-// Flows will be imported for their side effects in this file.
+import '@/ai/flows/determine-content-type.ts';
+import '@/ai/flows/adapt-summary-tone.ts';
+import '@/ai/flows/summarize-url.ts';
