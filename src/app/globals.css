@@ -87,6 +87,7 @@ body {
   }
 }
 
+/* Styles for the summarization container */
 .summary-container {
   max-width: 800px;
   margin: 20px auto;
@@ -97,6 +98,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the URL input field */
 .url-input {
   width: 100%;
   padding: 10px;
@@ -108,6 +110,7 @@ body {
   background-color: hsl(var(--background));
 }
 
+/* Styles for the summarize button */
 .summarize-button {
   padding: 10px 20px;
   background-color: hsl(var(--accent));
@@ -123,17 +126,20 @@ body {
   background-color: teal;
 }
 
+/* Styles for the summary text */
 .summary-text {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
+/* Styles for the source details */
 .source-details {
   font-size: 0.9rem;
   color: hsl(var(--muted-foreground));
 }
 
+/* Styles for the donation button */
 .donation-button {
     display: inline-block;
     padding: 10px 20px;
@@ -149,4 +155,187 @@ body {
 
 .donation-button:hover {
     background-color: hsl(var(--primary));
+}
+
+/* Additional styles for a modern, readable layout */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: hsl(var(--primary));
+}
+
+/* Form Styles */
+input[type="url"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: teal;
+}
+
+/* Summary Display Styles */
+.summary-display {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.summary-display h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.summary-display p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid hsl(var(--border));
+  color: hsl(var(--muted-foreground));
+}
+
+/* Error Message Styling */
+.error-message {
+  color: hsl(var(--destructive));
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Layout and sidebar styles */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 240px;
+    background-color: hsl(var(--sidebar-background));
+    color: hsl(var(--sidebar-foreground));
+    border-right: 1px solid hsl(var(--sidebar-border));
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: hsl(var(--sidebar-primary));
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.75rem;
+}
+
+.sidebar a {
+    color: hsl(var(--sidebar-foreground));
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sidebar a:hover {
+    color: hsl(var(--sidebar-accent-foreground));
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header styles */
+.header {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    padding: 1rem 2rem;
+    border-bottom: 1px solid hsl(var(--border));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.header .donation-button {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.header .donation-button:hover {
+    background-color: hsl(var(--primary));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid hsl(var(--border));
+    }
+
+    .app-layout {
+        flex-direction: column;
+    }
 }

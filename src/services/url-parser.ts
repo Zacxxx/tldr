@@ -28,11 +28,34 @@ export interface ContentMetadata {
  * @returns A promise that resolves to a ContentMetadata object.
  */
 export async function parseUrl(url: string): Promise<ContentMetadata> {
-  // TODO: Implement this by calling an API or using a library.
+  try {
+    // Basic content type detection based on URL patterns (expand as needed)
+    let type: ContentType = 'unknown';
+    if (url.includes('youtube.com') || url.includes('youtu.be')) {
+      type = 'video';
+    } else if (url.includes('twitter.com')) {
+      type = 'tweet';
+    } else if (url.includes('reddit.com')) {
+      type = 'thread';
+    } else {
+      type = 'article'; // Default to article for general web pages
+    }
 
-  return {
-    type: 'article',
-    title: 'Example Article Title',
-    author: 'John Doe',
-  };
+    // TODO: Implement more sophisticated parsing using an API (e.g., Metascraper)
+    // or a library like 'unfurl.js' to extract title, author, etc.
+
+    // For now, return some dummy metadata
+    return {
+      type: type,
+      title: 'Example Content Title',
+      author: 'Content Author',
+    };
+  } catch (error) {
+    console.error('Error parsing URL:', error);
+    return {
+      type: 'unknown',
+      title: 'Failed to retrieve metadata',
+      author: 'Unknown',
+    };
+  }
 }
