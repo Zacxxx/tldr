@@ -164,6 +164,15 @@ export default function Home() {
             transition={{duration: 0.5}}
           >
             <h1>AI-Powered Summarizer</h1>
+            {loading ? (
+              <div className="text-sm text-muted-foreground">
+                Summarizing: {summarizingUrl}
+              </div>
+            ) : (
+              <div className="text-sm text-muted-foreground">
+                {logs.length > 0 ? logs[logs.length - 1] : "Ready to summarize"}
+              </div>
+            )}
             <a href="https://ko-fi.com/example" target="_blank" rel="noopener noreferrer">
               <Button className="donation-button">
                 <Icons.coffee className="mr-2 h-4 w-4"/>
