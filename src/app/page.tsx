@@ -22,9 +22,12 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [logs, setLogs] = useState<string[]>([]);
-  const [summaryHistory, setSummaryHistory] = useState<string[]>([]);
+  const [summaryHistory, setSummaryHistory] = useState<
+    { url: string; summary: string; contentType: string }[]
+  >([]);
   const [summarizingUrl, setSummarizingUrl] = useState<string>(''); // Track URL being summarized
   const [isLoadingHistory, setIsLoadingHistory] = useState(true); // Track if history is loading
+  const [searchTerm, setSearchTerm] = useState(''); // Search term for filtering history
   const {toast} = useToast();
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -49,6 +52,11 @@ export default function Home() {
     localStorage.setItem('summaryHistory', JSON.stringify(summaryHistory));
   }, [summaryHistory]);
 
+  // Filtered summary history based on search term
+  const filteredSummaryHistory = summaryHistory.filter(item =>
+    item.url.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.summary.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const handleSummarize = useCallback(async () => {
     setLoading(true);
@@ -116,11 +124,14 @@ export default function Home() {
               <CardDescription>AI-Powered Summarizer</CardDescription>
             </CardHeader>
             <CardContent>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
+              <div className="sidebar-search">
+                <Input
+                  type="text"
+                  placeholder="Search summaries"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
             </CardContent>
           </Card>
           <Card>
@@ -131,11 +142,11 @@ export default function Home() {
             <CardContent>
               {isLoadingHistory ? (
                 <p>Loading history...</p>
-              ) : summaryHistory.length === 0 ? (
+              ) : filteredSummaryHistory.length === 0 ? (
                 <p>No summaries yet.</p>
               ) : (
                 <ScrollArea className="h-[200px] w-full rounded-md border">
-                  {summaryHistory.map((item, index) => (
+                  {filteredSummaryHistory.map((item, index) => (
                     <div key={index} className="mb-4">
                       <a
                         href={item.url}
@@ -164,6 +175,14 @@ export default function Home() {
             transition={{duration: 0.5}}
           >
             <h1>AI-Powered Summarizer</h1>
+            <nav className="header-nav">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Login</a></li>
+              </ul>
+            </nav>
             {loading ? (
               <div className="text-sm text-muted-foreground">
                 Summarizing: {summarizingUrl}

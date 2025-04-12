@@ -435,3 +435,65 @@ footer {
     margin-bottom: 0.25rem;
     line-height: 1.4;
 }
+
+/* Header styles */
+.header {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    padding: 1rem 2rem;
+    border-bottom: 1px solid hsl(var(--border));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: hsl(var(--foreground));
+    transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+    color: hsl(var(--primary));
+}
+
+.header .donation-button {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.header .donation-button:hover {
+    background-color: hsl(var(--primary));
+}
+
+/* Sidebar search input */
+.sidebar-search input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--background));
+}
