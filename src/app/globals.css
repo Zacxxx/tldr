@@ -499,3 +499,72 @@ footer {
     background-color: hsl(var(--background));
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-nav li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .donation-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Auto-resizing elements */
+.header-nav ul {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 0.5rem; /* Adjust gap as needed */
+}
+
+.header-nav li {
+    flex: 0 1 auto; /* Allow items to grow and shrink */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 640px) {
+    .header-nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+    }
+
+    .header-nav li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Styles for the loading animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    width: 24px;
+    height: 24px;
+    border: 5px solid hsl(var(--primary));
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
