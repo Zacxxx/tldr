@@ -27,24 +27,20 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="min-h-screen flex flex-col">
-          <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 pt-4">
+          <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-8">
             <div className="container flex h-14 items-center justify-between">
               <div className="flex items-center space-x-4">
                 <a href="/" className="flex items-center space-x-2">
-                  <div className="h-8 w-8 rounded bg-accent flex items-center justify-center">
-                    <span className="text-accent-foreground font-bold text-lg">T</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-bold leading-none">TL;DR</span>
-                    <span className="text-xs text-muted-foreground">AI Summarizer</span>
+                  <div className="h-8 w-24 rounded bg-white flex items-center justify-center">
+                    <span className="text-accent font-bold text-lg">TL;DR</span>
                   </div>
                 </a>
-                <a href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <a href="/login" className="text-sm font-medium bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2 rounded-md transition-colors">
                   Login
                 </a>
                 <a 
                   href="https://ko-fi.com" 
-                  className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
+                  className="text-sm font-medium bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2 rounded-md transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -481,7 +481,7 @@ export default function LiquidButton({
         ref={buttonRef}
         onClick={onClick}
         disabled={disabled}
-        className="relative inline-block rounded-full text-white font-bold text-[14px] leading-[60px] tracking-[0.05em] text-center no-underline uppercase border-none bg-transparent cursor-pointer"
+        className="relative inline-block rounded-full text-white font-bold text-[14px] leading-[60px] tracking-[0.05em] text-center no-underline uppercase border-none bg-transparent cursor-pointer flex items-center justify-center"
         style={{
           fontFamily: "'Droid Sans', sans-serif",
           width: `${width}px`,
@@ -489,7 +489,7 @@ export default function LiquidButton({
         }}
       >
         {/* Button text */}
-        <span className="relative z-[2]">{text}</span>
+        <span className="relative z-[2] w-full text-center">{text}</span>
 
         {/* Canvas for liquid effect */}
         <canvas ref={canvasRef} className="absolute top-[-30px] right-[-30px] bottom-[-30px] left-[-30px] z-[1]" />
